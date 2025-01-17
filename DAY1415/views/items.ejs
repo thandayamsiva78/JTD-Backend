@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <%- include('partials/header') %> -->
+    <table>
+        <thead>
+            <tr>
+                <th>SL.No</th>
+                <th>Name </th>
+                <th>Course</th>
+                <th>Medium</th>
+                <th>marks</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% if (items.length === 0) {%> 
+                <tr>
+                    <td colspan="3" style="text-align: center;">No items Found</td>
+                </tr>
+            <%} else { %>
+                <% items.forEach(item => { %>
+                    <tr>
+                        <td><%= item.id %></td>
+                        <td><%= item.name %></td>
+                        <td><%= item.course %></td>
+                        <td><%= item.medium %></td>
+                        <td><%= item.marks %></td>
+                    </tr>
+                <%}) %>
+           <% }%>
+        </tbody>
+    </table>
+</body>
+</html>

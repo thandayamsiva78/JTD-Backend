@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Authorization Example</title>
+</head>
+<body>
+  <h1>Authorization Example</h1>
+  <div>
+    <h2>Login</h2>
+    <form id="loginForm">
+      <input type="text" id="username" placeholder="Username" required />
+      <input type="password" id="password" placeholder="Password" required />
+      <button type="submit">Login</button>
+    </form>
+  </div>
+  <div>
+    <h2>Protected Request</h2>
+    <button id="protectedRequest">Access Protected Route</button>
+    <p id="response"></p>
+  </div>
+
+  <script src="frontend.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API Form Example</title>
+</head>
+<body>
+    <h1>Submit Form Data</h1>
+    <form id="dataForm">
+        <label for="name">Name:</label>
+        <input type="text" name="name" id="name"  required>
+        <label for="email">Email:</label>
+        <input type="text" name="email" id="email">
+        <button type="submit">Submit</button>
+    </form>
+
+    <script>
+        document.getElementById("dataForm").addEventListener('submit' , async ()=> {
+            event.preventDefault();
+
+            const formData = {
+                name : document.getElementById('name').value,
+                email : document.getElementById('email').value,
+            };
+
+            try {
+                const response = await fetch('localhost:3000/submit' ,{
+                    method : "POST",
+                    headers :{
+                        "Content-type" : 'application/json',
+                        "authorization" : "Bearer "
+                    },
+                    body : JSON.stringify(formData),
+                });
+
+                if (!response.ok){
+                    throw new Error (`Serevr error : ${response.statusText}`);
+
+                }
+
+                const data = await response.json();
+                console.log("Success :" , data);
+                alert("FORM SUBMITTED SUCCESSFULLY!");
+
+            } catch (error) {
+                console.error("Error :" , error);
+                alert("FAILED TO SUBMIT FORM.")
+            }
+
+        })
+    </script>
+</body>
+</html> -->
